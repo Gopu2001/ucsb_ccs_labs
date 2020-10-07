@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <math.h>
 
 using namespace std;
 
@@ -25,9 +26,9 @@ int main()
             total += (multiplier * 1 / prime) + 0.0;
             //cout << multiplier << " *" << " 1 / " << prime << endl;
         }
-        cout << fixed;
-        cout << setprecision(3);
-        total = (int)(4000.0*total)/1000.0;
+        //cout << fixed;
+        //cout << setprecision(3);
+        total = round(4000.0*total)/1000.0;
         cout << "The approximate value of pi using " << n << " terms is: " << total << endl;
     }
     return 0;
