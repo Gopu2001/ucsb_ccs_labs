@@ -32,7 +32,7 @@ int main()
         total = round(4000.0*total)/1000.0;
         if(total == (int)total) {
             string tot = to_string((int)total) + (string)(".000");
-            cout << "The approximate value of pi using " << n << " terms is: " << tot << endl;
+            cout << "The approximate value of pi using " << n << " term is: " << tot << endl;
         } else {
             cout << "The approximate value of pi using " << n << " terms is: " << total << endl;
         }
