@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <math.h>
+#include <string>
 
 using namespace std;
 
@@ -29,7 +30,12 @@ int main()
         //cout << fixed;
         //cout << setprecision(3);
         total = round(4000.0*total)/1000.0;
-        cout << "The approximate value of pi using " << n << " terms is: " << total << endl;
+        if(total == (int)total) {
+            string tot = to_string((int)total) + (string)(".000");
+            cout << "The approximate value of pi using " << n << " terms is: " << tot << endl;
+        } else {
+            cout << "The approximate value of pi using " << n << " terms is: " << total << endl;
+        }
     }
     return 0;
 }
