@@ -23,11 +23,11 @@ int main() {
   assertEquals(true,isPrime(3),"isPrime(3)");
   assertEquals(false,isPrime(4),"isPrime(4)");
   assertEquals(false,isPrime(55),"isPrime(55)");
-  
+
   assertEquals(true,isPrime(859),"isPrime(859)");
   assertEquals(false,isPrime(861),"isPrime(861)");
   assertEquals(true,isPrime(863),"isPrime(863)");
-					 
+
   assertEquals(false,isPrime(1337),"isPrime(1337)");
   assertEquals(true,isPrime(1373),"isPrime(1373)");
   assertEquals(false,isPrime(64507),"isPrime(64507)");
@@ -36,11 +36,12 @@ int main() {
   // Note that negative numbers are, by definition,
   // not Prime.  http://mathforum.org/library/drmath/view/55940.html
   // Same for 0 and 1
-  
+
   assertEquals(false,isPrime(-55),"isPrime(-55)");
   assertEquals(false,isPrime(-80),"isPrime(-80)");
   assertEquals(false,isPrime(0),"isPrime(0)");
   assertEquals(false,isPrime(1),"isPrime(1)");
-  
+
+  //assertEquals(false,isPrime(27),"isPrime(27)"); // please delete this line before submission
   return 0;
 }
