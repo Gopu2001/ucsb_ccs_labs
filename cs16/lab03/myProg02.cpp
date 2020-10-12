@@ -1,3 +1,4 @@
+// Anmol Kapoor
 // countDucks.cpp 
 // P. Conrad for CS16, Winter 2015
 // Example program to read from file and count occurences
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
     exit(1); // defined in cstdlib
   }
   int duckCount = 0;
+  int totalCount = -1;
   string output;
   ifstream animals;
   animals.open(argv[1]);
@@ -26,9 +28,13 @@ int main(int argc, char *argv[])
     {
       animals >> output;
       if(output == "duck") { duckCount += 1; }
+      totalCount += 1;
     }
   }
-  cout << "There were " << duckCount << " ducks in " << argv[1] << endl;
+  cout << "Report for " << argv[1] << ":\n";
+  cout << "\tAnimal count:\t " << totalCount << endl;
+  cout << "\tDuck count:\t " << duckCount << endl;
+  cout << "\tNon duck count:\t " << (totalCount - duckCount) << endl;
   animals.close();
   return 0;
 }
