@@ -2,7 +2,7 @@
 #include "tddFuncs.h"
 
 int main() {
-
+  /*
   int fiveThrees[5]={3,3,3,3,3};
   assertEquals(0,
 	       countEvens(fiveThrees,5),
@@ -38,6 +38,6 @@ int main() {
   assertEquals(7,
 	       countEvens(mix,10), 
 	       "countEvens(mix,10)" );
-
+  */
   return 0;
 }

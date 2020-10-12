@@ -6,6 +6,7 @@ int main() {
   // that all pass, and that test various cases,
   // i.e. where the max is at the beginning, middle and end of the array
   // See lab instructions for details.
+  /*
   int fiveThrees[5]={3,3,3,3,3};
   assertEquals(3,
                maxOfArray(fiveThrees,5),
@@ -39,5 +40,6 @@ int main() {
   assertEquals(123,
                maxOfArray(mix,10),
                "maxOfArray(mix,10)" );
+  */
   return 0;
 }

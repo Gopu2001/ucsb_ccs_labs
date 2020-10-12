@@ -6,7 +6,7 @@ using namespace std;
 
 int maxOfArray(int a[], int size) {
   if (size < 1) {
-    cerr << "ERROR: maxOfArray called with size < 1" << endl;
+    //cerr << "ERROR: maxOfArray called with size < 1" << endl;
     exit(1);
   }
   int result=a[0];
