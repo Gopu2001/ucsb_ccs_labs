@@ -32,9 +32,9 @@ int main(int argc, char *argv[])
     }
   }
   cout << "Report for " << argv[1] << ":\n";
-  cout << "\tAnimal count:\t " << totalCount << endl;
-  cout << "\tDuck count:\t " << duckCount << endl;
-  cout << "\tNon duck count:\t " << (totalCount - duckCount) << endl;
+  cout << "\tAnimal count:    " << totalCount << endl;
+  cout << "\tDuck count:      " << duckCount << endl;
+  cout << "\tNon duck count:  " << (totalCount - duckCount) << endl;
   animals.close();
   return 0;
 }
