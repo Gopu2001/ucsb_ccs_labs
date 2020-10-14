@@ -34,9 +34,12 @@ double distanceBetween(Point p, Point q) {
 // (*p).y refers to the y member of the point
 // p->x is a shortcut for (*p).x ( -> means deference AND THEN go inside the struct)
 // p->y is a shortcut for (*p).y ( -> means deference AND THEN go inside the struct)
-
+// precondition: p is a struct Point
+// postcondition: point p will have a .x and a .y value as referred to as xVal and yVal
 
 void initPoint(struct Point *p, double xVal, double yVal) {
+  (*p).x = xVal;
+  (*p).y = yVal;
   //return; //@@@ for a void function, the stub is just a bare return that does nothing
 }
 
@@ -60,10 +63,12 @@ string boxToString(Box b, int precision) {
 bool pointsApproxEqual(Point p1, 
 		       Point p2, 
 		       double tolerance) {
+  // Preconditions: Points p1 and p2 are given values
+  // Postconditions: a boolean value is returned depending on the closeness of the two points
   // Two points are approximately equal if the distance between them
-  // is less than our tolerance.  (If we want to test for 
+  // is less than our tolerance.  (If we want to test for
   // exact equality, we can pass in a value of zero.)
-
+  // cout << tolerance << endl;
   return distanceBetween(p1,p2) < tolerance;
 
 }
@@ -83,8 +88,10 @@ bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
   // and the definition in your utility.cpp file.
 
   // TODO: FILL THIS IN WITH APPROPRIATE CODE
-
-  return false; // STUB!  TODO: Delete this line and comment and replace with appropriate code
+  struct Point b01, b02;
+  b01.x = b1.width;  b01.y = b1.height; b02.x = b2.width; b02.y = b2.height;
+  return (pointsApproxEqual(b1.ul, b2.ul)) && (pointsApproxEqual(b01, b02));
+  // return false; // STUB!  TODO: Delete this line and comment and replace with appropriate code
 }
 
 
