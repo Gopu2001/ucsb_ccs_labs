@@ -70,6 +70,7 @@ void addIntToStartOfList(LinkedList *list, int value) {
     // (4) Make both head and tail of this list point to p
     list->head = p;
     list->tail = p;
+    p->next = NULL;
   } else {
     // Add p at the head of the list and set every value later one node
     Node * tmp = list->head;
