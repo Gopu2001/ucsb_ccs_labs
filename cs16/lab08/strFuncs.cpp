@@ -3,6 +3,7 @@
 #include <cstring>
 #include <algorithm>
 #include "strFuncs.h"
+#include "tddFuncs.h"
 using namespace std;
 
 
@@ -55,5 +56,14 @@ int main() {
   //bool pal2 = isPalindrome("1233230");
   //cout << "(1234321) TRUE   " << pal1 << endl;
   //cout << "(1232320) FALSE  " << pal2 << endl;
+  assertEquals(1, isAnagram("abc", "cba"), "isAnagram(abc, cba)");
+  assertEquals(1, isAnagram("abc", "abc"), "isAnagram(abc, abc)");
+  assertEquals(1, isAnagram("abc", "bac"), "isAnagram(abc, bac)");
+  assertEquals(1, isAnagram("PiZzA", "PiZzA"), "isAnagram(PiZzA, PiZzA)");
+  assertEquals(0, isAnagram("abc", "ccba"), "isAnagram(abc,ccba)");
+  assertEquals(0, isAnagram("cba", "ccba"), "isAnagram(cba, ccba)");
+  assertEquals(0, isAnagram("hello", "helo"), "isAnagram(hello, helo)");
+  assertEquals(0, isAnagram("hello", "PiZzA"), "isAnagram(hello, PiZzA)");
+  assertEquals(0, isAnagram("bac", "helo"), "isAnagram(bac, helo)");
   return 0;
 }
