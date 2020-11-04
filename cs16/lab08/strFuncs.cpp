@@ -2,6 +2,7 @@
 #include <string>
 #include <cstring>
 #include <algorithm>
+#include <cctype>
 #include "strFuncs.h"
 #include "tddFuncs.h"
 using namespace std;
@@ -13,6 +14,8 @@ using namespace std;
  * affect your result.
  */
 bool isAnagram(string s1, string s2){
+  transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
+  transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
   //const int len = s1.size();
   //string* d2 = new string[len];
   for(int i = 0; i < s1.size(); i++) {
@@ -27,12 +30,14 @@ bool isAnagram(string s1, string s2){
   return true;
 }
 
-/* Precondition: s1 is a valid string that may contain upper or lower case alphabets, no spaces or special characters
- * Postcondition: Returns true if s1 is a palindrome, false otherwise
+/* Precondition: s2 is a valid string that may contain upper or lower case alphabets, no spaces or special characters
+ * Postcondition: Returns true if s2 is a palindrome, false otherwise
  * You should provide a recursive solution
  */
-bool isPalindrome(const string s1){
-  cout << "        " << s1 << endl;
+bool isPalindrome(const string s2){
+  string s1 = s2;
+  transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
+  //cout << "        " << s1 << endl;
   if(s1 == "") {
     return true;
   }
@@ -47,7 +52,8 @@ bool isPalindrome(const string s1){
   // return true;
 }
 
-int main() {
+
+//int main() {
   //cout << "--- isAnagram() ---" << endl;
   //cout << "TRUE   " << isAnagram("123", "321") << endl;
   //cout << "FALSE  " << isAnagram("123", "324") << endl << endl;
@@ -56,14 +62,14 @@ int main() {
   //bool pal2 = isPalindrome("1233230");
   //cout << "(1234321) TRUE   " << pal1 << endl;
   //cout << "(1232320) FALSE  " << pal2 << endl;
-  assertEquals(1, isAnagram("abc", "cba"), "isAnagram(abc, cba)");
-  assertEquals(1, isAnagram("abc", "abc"), "isAnagram(abc, abc)");
-  assertEquals(1, isAnagram("abc", "bac"), "isAnagram(abc, bac)");
-  assertEquals(1, isAnagram("PiZzA", "PiZzA"), "isAnagram(PiZzA, PiZzA)");
-  assertEquals(0, isAnagram("abc", "ccba"), "isAnagram(abc,ccba)");
-  assertEquals(0, isAnagram("cba", "ccba"), "isAnagram(cba, ccba)");
-  assertEquals(0, isAnagram("hello", "helo"), "isAnagram(hello, helo)");
-  assertEquals(0, isAnagram("hello", "PiZzA"), "isAnagram(hello, PiZzA)");
-  assertEquals(0, isAnagram("bac", "helo"), "isAnagram(bac, helo)");
-  return 0;
-}
+  // assertEquals(1, isAnagram("abc", "cba"), "isAnagram(abc, cba)");
+  // assertEquals(1, isAnagram("abc", "abc"), "isAnagram(abc, abc)");
+  // assertEquals(1, isAnagram("abc", "bac"), "isAnagram(abc, bac)");
+  // assertEquals(1, isAnagram("PiZzA", "PiZzA"), "isAnagram(PiZzA, PiZzA)");
+  // assertEquals(0, isAnagram("abc", "ccba"), "isAnagram(abc,ccba)");
+  // assertEquals(0, isAnagram("cba", "ccba"), "isAnagram(cba, ccba)");
+  // assertEquals(0, isAnagram("hello", "helo"), "isAnagram(hello, helo)");
+  // assertEquals(0, isAnagram("hello", "PiZzA"), "isAnagram(hello, PiZzA)");
+  //assertEquals(0, isAnagram("bac", "helo"), "isAnagram(bac, helo)");
+  //  return 0;
+//}

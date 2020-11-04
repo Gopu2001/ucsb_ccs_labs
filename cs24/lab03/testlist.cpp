@@ -58,18 +58,16 @@ int main(int argc, char *argv[]) {
     // test methods for empty list2 (just need one contains test though)
     cout << "Empty list 2: \n   ";
     list2.print();
-    //del
-    //cout << endl << "   max: " << list2.max() << endl;
     cout << endl << "   count: " << list2.count() << endl;
     cout << "   sum: " << list2.sum() << endl;
     cout << "   contains 1 ? " << (list2.contains(1)? "yes" : "no") << endl;
-    //cout << "   max: " << list2.max() << endl;
-    //cout << "   average: " << list2.average() << endl;
-    //cout << "   List 2 after insertFirst(3), then insertFirst(1): \n   ";
-    //list2.insertFirst(3);
-    //list2.insertFirst(1);
-    //list2.print();
-    //cout << endl;
+    cout << "   max: " << list2.max() << endl;
+    cout << "   average: " << list2.average() << endl;
+    cout << "   List 2 after insertFirst(3), then insertFirst(1): \n   ";
+    list2.insertFirst(3);
+    list2.insertFirst(1);
+    list2.print();
+    cout << endl;
 
     return 0;
 }

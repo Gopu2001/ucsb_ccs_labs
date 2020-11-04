@@ -36,6 +36,7 @@ void test_destructor(){
     }
 
     delete list1;
+    list1->print();
 }
 
 void test_assignmentOperator(){
@@ -52,13 +53,12 @@ void test_assignmentOperator(){
     assert(list2.sum()==list1.sum());
 
     list1.append(100);
+
     assert((list2.sum()+100) == list1.sum());
 
     list1 = IntList();
     assert(list1.sum() == 0);
     assert(list1.count() == 0);
-
-
 }
 
 // creates two lists (one empty), and does simple tests of list methods

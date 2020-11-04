@@ -9,14 +9,61 @@ using std::cout;
 
 // copy constructor
 IntList::IntList(const IntList& source) {
-    //IMPLEMENT THIS
+  Node *tmp = source.first;
+  while(tmp != NULL) {
+    this->append(tmp->info);
+    tmp = tmp->next;
+  }
+  //IMPLEMENT THIS
 }
 
 // destructor deletes all nodes
 IntList::~IntList() {
-    //IMPLEMENT THIS
+  if(first != NULL) {
+    emptyNodes(first);
+  }
+  first = NULL;
+  free(first);
+  // cout << first->info << std::endl;
+  //IMPLEMENT THIS
 }
 
+// helper method for intlist destructor
+void IntList::emptyNodes(Node* fpos_t) {
+  if(fpos_t != NULL) {
+    emptyNodes(fpos_t->next);
+    // free(fpos_t->next);
+    // delete fpos_t->next;
+    // free((void*)fpos_t->next);
+    cout << fpos_t->info << std::endl;
+  }
+  // if (fpos_t->next)
+  //   fpos_t->next = NULL;
+  // fpos_t = NULL; // This gives memory leaks
+  delete fpos_t;
+  // cout << fpos_t->info << std::endl;
+  // delete first;
+
+
+  // Node* next;
+  // while(fpos_t != NULL) {
+  //   next = fpos_t->next;
+  //   // free(fpos_t);
+  //   // fpos_t->next = NULL;
+  //   // fpos_t->next = NULL;
+  //   // free(fpos_t->next);
+  //   delete fpos_t;
+  //   // delete fpos_t;
+  //   delete fpos_t->next;
+  //   fpos_t = next;
+  //   cout << "-";
+  // }
+  // fpos_t->next = NULL;
+  // fpos_t = NULL;
+  // free(fpos_t);
+  // free(fpos_t);
+  // delete fpos_t;
+}
 
 // return sum of values in list
 int IntList::sum() const {
@@ -35,7 +82,7 @@ bool IntList::contains(int value) const {
     //cout << "beg of contains\n";
     Node *tmp = first;
     if(tmp == NULL) {
-      cout << "contains cleared early" << std::endl;
+      //cout << "contains cleared early" << std::endl;
       return false;
     }
     while(tmp != NULL) {
@@ -50,10 +97,10 @@ bool IntList::contains(int value) const {
 
 // returns maximum value in list, or 0 if empty list
 int IntList::max() const {
-    cout << "max() entered" << std::endl;
+    //cout << "max() entered" << std::endl;
     Node *tmp = first;
     if(tmp == NULL) {
-      cout << "max cleared early" << std::endl;
+      //cout << "max cleared early" << std::endl;
       return 0;
     }
     int value = first->info;
@@ -70,27 +117,39 @@ int IntList::max() const {
 // returns average (arithmetic mean) of all values, or
 // 0 if list is empty
 double IntList::average() const {
+  int count = this->count();
+  int sum = this->sum();
+  if(count > 0)
     return 1.0 * this->sum() / this->count(); // REPLACE THIS NON-SOLUTION
+  else
+    return 0;
 }
 
 // inserts value as new node at beginning of list
 void IntList::insertFirst(int value) {
-    Node *befFirst;
-    befFirst->info = value;
-    //befFirst->head = NULL;
-    befFirst->next = first;
-    first = befFirst;
-    // IMPLEMENT
+  Node *befFirst = (Node*) new Node;
+  befFirst->info = value;
+  //befFirst->head = NULL;
+  befFirst->next = first;
+  first = befFirst;
+  //delete before;
+  // IMPLEMENT
 }
 
 //Assignment operator should copy the list from the source
 //to this list, deleting/replacing any existing nodes
 IntList& IntList::operator=(const IntList& source){
     //IMPLEMENT
+    Node *tmp = source.first;
+    emptyNodes(this->first);
+    first = NULL;
+    while(tmp != NULL) {
+      append(tmp->info);
+      tmp = tmp->next;
+    }
+    delete tmp;
     return *this;
 }
-
-
 
 // DO NOT CHANGE ANYTHING BELOW (READ IT THOUGH)
 

@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
       addIntToStartOfList(list, -17);
       ASSERT_EQUALS( "[-17]->[12]->[42]->[57]->[61]->null", linkedListToString(list));
       freeLinkedList(list);
-      
+
       ASSERT_EQUALS( "null", linkedListToString(empty));
       addIntToStartOfList(empty, 0);
       ASSERT_EQUALS( "[0]->null", linkedListToString(empty));
@@ -185,7 +185,7 @@ int main(int argc, char* argv[]) {
     } else if (testNum == 7) {
 
       START_TEST_GROUP("SUM");
-      
+
       int l1[3]={9,3,61};
       LinkedList *list1 = arrayToLinkedList(l1,3);
       int l2[3] = {-7, -10, -11};
@@ -201,7 +201,6 @@ int main(int argc, char* argv[]) {
       ASSERT_EQUALS(3, sum(list4));
     }
   }
-  
+
   return 0;
 }
-

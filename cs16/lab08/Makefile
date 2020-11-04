@@ -3,22 +3,19 @@ CXX = g++
 
 CXXFLAGS = -Wall -Wno-uninitialized
 
-BINARIES= llTests
+BINARIES= recTests
 
-COMMON_OBJECT_FILES = linkedListFuncs.o moreLinkedListFuncs.o tddFuncs.o
+COMMON_OBJECT_FILES = linkedListFuncs.o strFuncs.o recLinkedListFuncs.o tddFuncs.o
 
 all: ${BINARIES}
 
 tests: ${BINARIES}
-	./llTests 1
-	./llTests 2
-	./llTests 3
-	./llTests 4
-	./llTests 5
-	./llTests 6
-	./llTests 7
+	./recTests 1
+	./recTests 2
+	./recTests 3
+	./recTests 4
 
-llTests: llTests.o ${COMMON_OBJECT_FILES}
+recTests: recTests.o ${COMMON_OBJECT_FILES}
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
 
 clean:

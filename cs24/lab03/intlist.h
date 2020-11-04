@@ -1,5 +1,5 @@
 // intlist.h
-// Linked list header file 
+// Linked list header file
 
 #ifndef INTLIST_H
 #define INTLIST_H
@@ -14,7 +14,7 @@ public:
     void print() const;     // print values separate by ' '
     int count() const;      // return count of values
 
-    // destructor, copy constructor and 6 other METHODS YOU MUST 
+    // destructor, copy constructor and 6 other METHODS YOU MUST
     // IMPLEMENT IN intlist.cpp (NO CHANGE HERE):
     ~IntList();                      // destructor
     IntList(const IntList& source); //copy constructor (deep copy)
@@ -35,8 +35,11 @@ private:
         int info;
         Node *next;
     };
-
+    void emptyNodes(Node* fpos_t);
     Node *first; // pointer to first node (DO NOT CHANGE):
+
+//public:
+
 };
 
 #endif
