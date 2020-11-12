@@ -35,7 +35,7 @@ void IntList::emptyNodes(Node* fpos_t) {
     // free(fpos_t->next);
     // delete fpos_t->next;
     // free((void*)fpos_t->next);
-    cout << fpos_t->info << std::endl;
+    // cout << fpos_t->info << std::endl;
   }
   // if (fpos_t->next)
   //   fpos_t->next = NULL;
